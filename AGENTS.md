@@ -9,7 +9,7 @@ Este repositório contém somente o portal estático ValidApp Architecture. Não
 - `content/database.json` é um snapshot de metadados de banco. Consulte metadados reais em leitura antes de atualizar tabelas, chaves ou políticas. Nunca consulte ou copie registros pessoais.
 - `content/modules.json` mapeia arquivos e responsabilidades. Confirme que cada link existe na branch do app indicada em `src/App.tsx`.
 - `content/diagrams/*.mmd` define os diagramas; atualize a fonte `.mmd` e o texto explicativo na mesma alteração.
-- `content/releases.json` alimenta toda a página de versões. Para adicionar uma versão publicada, inclua versão, data ISO, `status: "published"`, título, descrição, URL real do APK em GitHub Releases, novidades e correções. Não invente APKs, datas ou links. Itens planejados usam `status: "planned"`, `releaseDate: null` e `downloadUrl: null`.
+- `content/releases.json` alimenta toda a página de versões. Para adicionar uma versão publicada, inclua versão, data ISO, `status: "published"`, título, descrição, URL real e acessível do APK, novidades e correções. Prefira GitHub Releases; um link direto de artefato do EAS também pode ser usado após confirmar que o arquivo está acessível. Não invente APKs, datas ou links. Itens planejados usam `status: "planned"`, `releaseDate: null` e `downloadUrl: null`.
 
 ## Desenvolvimento
 

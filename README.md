@@ -44,8 +44,8 @@ O endereço só deve ser anunciado depois de confirmar o deploy. Segundo a [docu
 
 ## Publicar um APK
 
-1. No repositório do aplicativo, crie uma **GitHub Release** e anexe o APK real como asset.
-2. Copie a URL direta do asset.
+1. Prefira criar uma **GitHub Release** no repositório do aplicativo e anexar o APK real como asset. Para builds internos do EAS, também é possível usar o link direto do artefato `.apk`, desde que ele esteja acessível sem login.
+2. Copie a URL direta do APK e confirme que ela responde com o arquivo.
 3. Edite apenas `content/releases.json`: crie um item com `status: "published"`, versão, data ISO (`AAAA-MM-DD`), título, descrição, `downloadUrl`, novidades e correções. Mantenha versões ainda não lançadas como `planned`, sem URL.
 4. Confirme que o link abre o arquivo; rode `npm run build`; faça commit e push.
 
