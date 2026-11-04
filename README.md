@@ -40,7 +40,7 @@ A navegação usa URLs com `#` para funcionar em páginas internas do GitHub Pag
 3. Execute o workflow **Publicar portal no GitHub Pages** em **Actions**, ou faça um novo push em `main`.
 4. Verifique o resultado em `https://nicolasportugal.github.io/Validapp_Architecture/`.
 
-O endereço só deve ser anunciado depois de confirmar o deploy. A disponibilidade do Pages para um repositório privado depende das configurações e do plano da conta GitHub.
+O endereço só deve ser anunciado depois de confirmar o deploy. Segundo a [documentação do GitHub Pages](https://docs.github.com/en/pages/quickstart), o GitHub Free oferece Pages para repositórios públicos; Pages para repositórios privados requer GitHub Pro, Team ou Enterprise. Se a opção não aparecer, confira o plano antes de alterar a visibilidade do repositório.
 
 ## Publicar um APK
 
