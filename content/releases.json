@@ -1,11 +1,11 @@
 [
   {
-    "version": "1.0.0",
+    "version": "0.1.0",
     "releaseDate": "2026-11-04",
     "status": "published",
-    "title": "Primeiro APK para testes",
-    "description": "Build Android de distribuição interna, gerado pelo EAS no perfil preview.",
-    "downloadUrl": "https://expo.dev/artifacts/eas/3H0U7Er0-zYxXpAF6hQE8S_Ytsl5XRYwVrwrIhEaTZg.apk",
+    "title": "Primeira versão Android de testes",
+    "description": "APK hospedado nos Releases do GitHub para instalação e testes.",
+    "downloadUrl": "https://github.com/NicolasPortugal/Validapp_Architecture/releases/download/v0.1.0/ValidApp-v0.1.0.apk",
     "changes": ["Primeiro pacote Android disponível para instalação e testes."],
     "fixes": []
   }
