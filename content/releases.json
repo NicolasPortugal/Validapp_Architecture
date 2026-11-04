@@ -5,7 +5,7 @@
     "status": "published",
     "title": "Primeira versão Android de testes",
     "description": "APK hospedado nos Releases do GitHub para instalação e testes.",
-    "downloadUrl": "https://github.com/NicolasPortugal/Validapp_Architecture/releases/download/v0.1.0/ValidApp-v0.1.0.apk",
+    "downloadUrl": "https://github.com/NicolasPortugal/Validapp_Architecture/releases/download/v0.1.0/ValidApp.v0.1.0.apk",
     "changes": ["Primeiro pacote Android disponível para instalação e testes."],
     "fixes": []
   }
