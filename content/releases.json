@@ -1,0 +1,12 @@
+[
+  {
+    "version": "0.1.0",
+    "releaseDate": null,
+    "status": "planned",
+    "title": "Primeira versão de testes",
+    "description": "Preparação do primeiro pacote Android do ValidApp.",
+    "downloadUrl": null,
+    "changes": ["Versão inicial em preparação"],
+    "fixes": []
+  }
+]

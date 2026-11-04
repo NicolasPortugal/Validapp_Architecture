@@ -1,0 +1,38 @@
+erDiagram
+  auth_users ||--o| profiles : id
+  auth_users |o--o{ products : user_id
+  profiles ||--o{ pantry_items : user_id
+  profiles |o--o{ global_products : created_by
+  auth_users {
+    uuid id PK
+  }
+  profiles {
+    uuid id PK, FK
+    text full_name
+    timestamptz created_at
+    timestamptz updated_at
+  }
+  products {
+    bigint id PK
+    uuid user_id FK
+    text name
+    text barcode
+    date expiry_date
+    integer quantity
+    text category
+    text photo_uri
+  }
+  pantry_items {
+    uuid id PK
+    uuid user_id FK
+    text product_name
+    date expiration_date
+    integer quantity
+  }
+  global_products {
+    uuid id PK
+    uuid created_by FK
+    text barcode UK
+    text name
+    text brand
+  }

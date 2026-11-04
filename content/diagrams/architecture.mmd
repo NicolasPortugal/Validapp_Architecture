@@ -1,0 +1,11 @@
+flowchart LR
+  U[Pessoa usuária] --> E[App Expo / React Native]
+  E --> A[Auth Context]
+  E --> P[Product Context]
+  E --> C[Câmera e cadastro manual]
+  A --> S[Supabase Auth]
+  A --> SS[SecureStore no dispositivo]
+  P --> DB[(public.products)]
+  P --> AS[AsyncStorage · visitante]
+  C --> P
+  E --> ST[Storage · avatar privado]

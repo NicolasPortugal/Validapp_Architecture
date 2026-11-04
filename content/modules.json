@@ -1,0 +1,55 @@
+[
+  {
+    "group": "Entrada e navegação",
+    "summary": "Inicialização, pilhas de autenticação e abas principais.",
+    "files": [
+      ["App.js", "Composição de provedores e navegação"],
+      ["components/BottomTabs.js", "Barra inferior personalizada"],
+      ["DashboardScreen.tsx", "Painel inicial e contadores de validade"]
+    ]
+  },
+  {
+    "group": "Autenticação e perfil",
+    "summary": "Cadastro, confirmação, entrada, recuperação, sessão e foto da conta.",
+    "files": [
+      ["auth/AuthContext.js", "Estado de conta e visitante"],
+      ["auth/authService.js", "Operações de Auth e recuperação"],
+      ["auth/secureSessionStorage.js", "Persistência segura da sessão"],
+      ["auth/profileService.js", "Nome e avatar"],
+      ["screens/LoginScreen.js", "Entrada"],
+      ["screens/RegisterScreen.js", "Cadastro"],
+      ["screens/ConfirmEmailScreen.js", "Confirmação por código"],
+      ["screens/ForgotPasswordScreen.js", "Recuperação de senha"],
+      ["ProfileScreen.js", "Ajustes e conta"]
+    ]
+  },
+  {
+    "group": "Produtos e validade",
+    "summary": "Armazém, cadastro, categorias e leitura de códigos de barras.",
+    "files": [
+      ["products/ProductContext.js", "Persistência por conta ou visitante"],
+      ["products/expiry.js", "Cálculo de validade"],
+      ["products/categories.js", "Categorias e apresentação"],
+      ["InventoryScreen.js", "Lista de produtos"],
+      ["screens/ManualProductScreen.js", "Cadastro manual"],
+      ["ScannerScreen.js", "Câmera e leitura de código"],
+      ["screens/AlertsScreen.js", "Produtos com alerta"]
+    ]
+  },
+  {
+    "group": "Integrações e apresentação",
+    "summary": "Cliente Supabase, temas, preferências e recursos visuais.",
+    "files": [
+      ["supabase.js", "Configuração do cliente Supabase"],
+      ["theme.js", "Paleta e tema"],
+      ["preferences/PreferencesContext.js", "Preferências locais"],
+      ["components/ProductImage.js", "Imagem de produto"],
+      ["components/AppDialog.js", "Janelas do app"],
+      ["supabase/schema.sql", "Esquema versionado no projeto"],
+      [
+        "supabase/migrations/20261104183257_avatars_privados.sql",
+        "Storage privado para avatar"
+      ]
+    ]
+  }
+]

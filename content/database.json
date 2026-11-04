@@ -1,0 +1,86 @@
+{
+  "verifiedAt": "2026-11-04",
+  "source": "Metadados do Supabase: information_schema e pg_policies; sem leitura de registros de usuários.",
+  "tables": [
+    {
+      "schema": "public",
+      "name": "products",
+      "usage": "Usada pelo app atual para os produtos de contas autenticadas.",
+      "columns": [
+        ["id", "bigint", "PK"],
+        ["name", "text", "obrigatório"],
+        ["barcode", "text", "opcional"],
+        ["expiry_date", "date", "opcional"],
+        ["created_at", "timestamptz", "padrão now()"],
+        ["user_id", "uuid", "FK → auth.users.id"],
+        ["brand", "text", "opcional"],
+        ["category", "text", "opcional"],
+        ["location", "text", "opcional"],
+        ["quantity", "integer", "padrão 1"],
+        ["photo_uri", "text", "opcional"],
+        ["source", "text", "padrão manual"]
+      ],
+      "access": "RLS para SELECT, INSERT, UPDATE e DELETE: user_id = auth.uid(). No UPDATE, a nova linha também deve manter esse vínculo."
+    },
+    {
+      "schema": "public",
+      "name": "profiles",
+      "usage": "Perfil relacionado à identidade do Auth; o app atual usa principalmente metadados do Auth para nome e avatar.",
+      "columns": [
+        ["id", "uuid", "PK; FK → auth.users.id"],
+        ["full_name", "text", "opcional"],
+        ["created_at", "timestamptz", "padrão now()"],
+        ["updated_at", "timestamptz", "padrão now()"]
+      ],
+      "access": "RLS para SELECT e UPDATE do próprio id. Inserção é tratada por trigger do banco; outros caminhos de escrita não verificados."
+    },
+    {
+      "schema": "public",
+      "name": "pantry_items",
+      "usage": "Tabela existente no projeto Supabase. Uso pelo app atual: não verificado no código analisado.",
+      "columns": [
+        ["id", "uuid", "PK"],
+        ["user_id", "uuid", "FK → public.profiles.id"],
+        ["product_name", "text", "obrigatório"],
+        ["barcode", "text", "opcional"],
+        ["category", "text", "padrão Outros"],
+        ["expiration_date", "date", "obrigatório"],
+        ["quantity", "integer", "padrão 1"],
+        ["unit", "text", "padrão un"],
+        ["status", "text", "padrão em_dia"],
+        ["created_at", "timestamptz", "padrão now()"],
+        ["updated_at", "timestamptz", "padrão now()"]
+      ],
+      "access": "RLS para SELECT, INSERT, UPDATE e DELETE vinculada a auth.uid() = user_id."
+    },
+    {
+      "schema": "public",
+      "name": "global_products",
+      "usage": "Catálogo global existente no banco. Uso pelo app atual: não verificado no código analisado.",
+      "columns": [
+        ["id", "uuid", "PK"],
+        ["barcode", "text", "único; obrigatório"],
+        ["name", "text", "obrigatório"],
+        ["brand", "text", "opcional"],
+        ["category", "text", "padrão Outros"],
+        ["created_by", "uuid", "FK → public.profiles.id"],
+        ["created_at", "timestamptz", "padrão now()"]
+      ],
+      "access": "A política SELECT usa condição true; a política INSERT exige auth.uid() = created_by. Os papéis permitidos pela política SELECT não foram verificados nesta consulta. Não foram identificadas políticas de UPDATE ou DELETE."
+    }
+  ],
+  "functions": [
+    {
+      "name": "handle_new_user",
+      "description": "Trigger para criação de perfil na inscrição; assinatura e implementação detalhada não exibidas aqui."
+    },
+    {
+      "name": "delete_my_account",
+      "description": "RPC invocada pelo app na exclusão da própria conta; regras internas não verificadas nesta página."
+    },
+    {
+      "name": "rls_auto_enable",
+      "description": "Event trigger presente no esquema público; detalhes de execução não verificados."
+    }
+  ]
+}
